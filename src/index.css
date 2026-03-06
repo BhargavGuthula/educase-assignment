@@ -1,0 +1,247 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #111827;
+  background-color: #f3f4f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background: white;
+}
+
+body {
+  margin: 0;
+  min-width: 360px;
+  max-width: 360px;
+  
+
+}
+
+#root {
+  width: min(100%, 430px);
+  margin: 0 auto;
+  background: #ffffff;
+
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.page {
+
+  height: 100%;
+  align-items: flex-end;
+  padding: 20px;
+  min-width: 360px;
+  max-width: 360px; 
+  display: flex;
+  width: 100%;
+}
+
+.account{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  justify-content: center;
+  gap: 10px;
+} 
+
+.account-title{
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.login{
+  display: flex;
+  align-items: flex-start;
+}
+.signup{
+  display: flex;
+  align-items: flex-start;
+}
+.stack{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  position: relative;
+}
+
+.input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 18px 12px 10px;
+  width: 100%;
+  font-size: 15px;
+}
+
+
+
+.input:focus {
+  outline: 2px solid #93c5fd;
+  border-color: #3b82f6;
+}
+
+.field label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 4px;
+  background: #fff;
+  color: #6c35de;
+  font-size: 13px;
+  font-weight: 600;
+  pointer-events: none;
+  transition: 0.16s ease;
+}
+
+.field .input:focus + label,
+.field .input:not(:placeholder-shown) + label {
+  top: 0;
+  transform: translateY(-50%);
+}
+
+
+.card {
+  min-width: 100%;  
+  max-width: 100%;
+  background: #ffffff;
+  padding: 0.25rem;
+  
+}
+section > .card{
+  gap:20px
+}
+.card h1 {
+  margin-right: 40%;
+  font-size: 1.6rem;
+}
+
+.card p {
+  margin-right: 20%;
+  color: #4b5563;
+  text-align: left;
+}
+
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.create-acc{
+  color: #fff;
+  background: #2563eb;
+  margin-bottom: 10px;
+}
+.login-acc{
+  background: rgb(210, 181, 238);
+  color: black;
+  margin-bottom: 10px;
+}
+
+.btn.secondary {
+  background: #111827;
+  color: #fff;
+}
+
+a.btn:hover {
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
+}
+.account-name{
+  font-weight: 500;
+  margin: 0;
+}
+.account-email {
+  margin: 0;
+  color: #4b5563;
+}
+
+.account-body{
+  display: flex;
+  align-items: center;
+
+  padding: 0;
+  
+}
+.account-email{
+  flex-wrap: wrap;
+}
+.account-details {
+  display: flex;
+  flex-direction: column; 
+  gap: 4px;
+}
+.account-page{
+  align-items: flex-start;
+  padding: 20px;
+}
+.avatar {
+    width: 88px;
+    height: 88px; 
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+  }
+
+
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e5e7eb;
+  }
+
+  #root {
+    height: min(92dvh, 860px);
+    border: 10px solid #111827;
+    border-radius: 28px;
+  }
+
+  .page {
+    height: 100%;
+  }
+}
