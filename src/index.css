@@ -58,7 +58,26 @@ a:hover {
   display: flex;
   width: 100%;
 }
+.agency-group p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6c35de;
+}
 
+.agency-options {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.radio-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #111827;
+}
 .account{
   display: flex;
   flex-direction: column;
@@ -164,6 +183,8 @@ section > .card{
   font-weight: 600;
   cursor: pointer;
   margin-bottom: 0;
+  background-color: #2563eb;
+  color: white;
 }
 
 .create-acc{
@@ -245,3 +266,4 @@ a.btn:hover {
     height: 100%;
   }
 }
+

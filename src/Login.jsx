@@ -15,12 +15,16 @@ function Login() {
 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, login.email, login.password);
+      const existingUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
 
       localStorage.setItem(
         'currentUser',
         JSON.stringify({
+          uid: userCredential.user.uid,
           email: userCredential.user.email,
-          name: userCredential.user.displayName || 'User'
+          name: userCredential.user.displayName || existingUser.name || 'User',
+          phoneNumber: existingUser.phoneNumber || '',
+          company: existingUser.company || ''
         })
       );
 

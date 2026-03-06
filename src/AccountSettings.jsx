@@ -18,7 +18,9 @@ function AccountSettings() {
       const localUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
       setUser({
         name: localUser.name || firebaseUser.displayName || 'Person',
-        email: firebaseUser.email || localUser.email || ''
+        email: firebaseUser.email || localUser.email || '',
+        phoneNumber: localUser.phoneNumber || '',
+        company: localUser.company || ''
       });
     });
 
@@ -50,6 +52,8 @@ function AccountSettings() {
           <div className="account-details">
             <h4 className="account-name">{user.name}</h4>
             <p className="account-email">{user.email}</p>
+            {user.phoneNumber ? <p className="account-email">{user.phoneNumber}</p> : null}
+            {user.company ? <p className="account-email">{user.company}</p> : null}
           </div>
         </div>
         <button className="btn secondary" onClick={handleLogout} type="button">

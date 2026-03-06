@@ -9,7 +9,8 @@ function Signup() {
     phoneNumber: '',
     email: '',
     password: '',
-    company: ''
+    company: '',
+    agency: 'yes'
   });
 
   const navigate = useNavigate();
@@ -30,8 +31,12 @@ function Signup() {
       localStorage.setItem(
         'currentUser',
         JSON.stringify({
+          uid: userCred.user.uid,
           email: userCred.user.email,
-          name: form.name
+          name: form.name,
+          phoneNumber: form.phoneNumber,
+          company: form.company,
+          agency: form.agency
         })
       );
 
@@ -106,6 +111,31 @@ function Signup() {
               required
             />
             <label>Company name</label>
+          </div>
+          <div className="agency-group">
+            <p>Are you an Agency?</p>
+            <div className="agency-options">
+              <label className="radio-option">
+                <input
+                  type="radio"
+                  name="agency"
+                  value="yes"
+                  checked={form.agency === 'yes'}
+                  onChange={handleChange}
+                />
+                Yes
+              </label>
+              <label className="radio-option">
+                <input
+                  type="radio"
+                  name="agency"
+                  value="no"
+                  checked={form.agency === 'no'}
+                  onChange={handleChange}
+                />
+                No
+              </label>
+            </div>
           </div>
 
           <button className="btn" type="submit">
